@@ -74,4 +74,28 @@ public class FcmService
             throw new Exception($"Failed to send bulk notification: {ex.Message}", ex);
         }
     }
+
+    public async Task<string> SendNotificationToTopicAsync(string topic, string title, string body, Dictionary<string, string>? data = null)
+    {
+        try
+        {
+            var message = new Message
+            {
+                Topic = topic,
+                Notification = new Notification
+                {
+                    Title = title,
+                    Body = body
+                },
+                Data = data
+            };
+
+            var response = await _messaging.SendAsync(message);
+            return response;
+        }
+        catch (FirebaseMessagingException ex)
+        {
+            throw new Exception($"Failed to send topic notification: {ex.Message}", ex);
+        }
+    }
 }

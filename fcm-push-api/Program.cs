@@ -22,3 +22,4 @@ app.Run();
 // Request models
 public record NotificationRequest(string Token, string Title, string Body, Dictionary<string, string>? Data = null);
 public record BulkNotificationRequest(List<string> Tokens, string Title, string Body, Dictionary<string, string>? Data = null);
+public record TopicNotificationRequest(string Topic, string Title, string Body, Dictionary<string, string>? Data = null);

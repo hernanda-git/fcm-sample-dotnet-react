@@ -129,5 +129,61 @@ public static class NotificationEndpoints
             };
             return operation;
         });
+
+        app.MapPost("/api/notification/topic", async (FcmService fcmService, TopicNotificationRequest request) =>
+        {
+            if (string.IsNullOrEmpty(request.Topic) || string.IsNullOrEmpty(request.Title) || string.IsNullOrEmpty(request.Body))
+            {
+                return Results.BadRequest(new { Error = "Topic, Title, and Body are required" });
+            }
+
+            try
+            {
+                var messageId = await fcmService.SendNotificationToTopicAsync(
+                    request.Topic,
+                    request.Title,
+                    request.Body,
+                    request.Data
+                );
+                return Results.Ok(new { MessageId = messageId, Message = "Notification sent to topic successfully" });
+            }
+            catch (Exception ex)
+            {
+                return Results.Json(new { Error = ex.Message }, statusCode: 500);
+            }
+        })
+        .WithName("SendTopicNotification")
+        .WithOpenApi(operation =>
+        {
+            operation.Summary = "Send a FCM notification to a topic";
+            operation.Description = "Sends a push notification to all devices subscribed to a topic.";
+            operation.RequestBody = new OpenApiRequestBody
+            {
+                Content = new Dictionary<string, OpenApiMediaType>
+                {
+                    ["application/json"] = new OpenApiMediaType
+                    {
+                        Schema = new OpenApiSchema
+                        {
+                            Type = JsonSchemaType.Object,
+                            Properties = new Dictionary<string, IOpenApiSchema>
+                            {
+                                ["topic"] = new OpenApiSchema { Type = JsonSchemaType.String, Description = "FCM topic name" },
+                                ["title"] = new OpenApiSchema { Type = JsonSchemaType.String, Description = "Notification title" },
+                                ["body"] = new OpenApiSchema { Type = JsonSchemaType.String, Description = "Notification body" },
+                                ["data"] = new OpenApiSchema
+                                {
+                                    Type = JsonSchemaType.Object,
+                                    AdditionalProperties = new OpenApiSchema { Type = JsonSchemaType.String },
+                                    Description = "Optional key-value pairs for additional data"
+                                }
+                            },
+                            Required = new HashSet<string> { "topic", "title", "body" }
+                        }
+                    }
+                }
+            };
+            return operation;
+        });
     }
 }
