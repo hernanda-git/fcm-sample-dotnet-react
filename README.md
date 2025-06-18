@@ -1,6 +1,5 @@
 # FCM Push Notification Sample Project
 
-![GitHub License](https://img.shields.io/github/license/hernanda-git/fcm-sample-dotnet-react)
 ![.NET Version](https://img.shields.io/badge/.NET-10-blueviolet)
 ![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)
