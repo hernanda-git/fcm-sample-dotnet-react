@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "1dv9BxQZmgU=",
+  "success": true,
+  "projectFilePath": "D:\\download\\fcm\\experiment-01\\fcm-push-api\\FcmPushApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ext-it\\.nuget\\packages\\firebaseadmin\\3.2.0\\firebaseadmin.3.2.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\google.api.gax\\4.8.0\\google.api.gax.4.8.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\google.api.gax.rest\\4.8.0\\google.api.gax.rest.4.8.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\google.apis\\1.68.0\\google.apis.1.68.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\google.apis.auth\\1.68.0\\google.apis.auth.1.68.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\google.apis.core\\1.68.0\\google.apis.core.1.68.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0-preview.4.25258.110\\microsoft.aspnetcore.openapi.10.0.0-preview.4.25258.110.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\microsoft.openapi\\2.0.0-preview.17\\microsoft.openapi.2.0.0-preview.17.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\scalar.aspnetcore\\2.4.19\\scalar.aspnetcore.2.4.19.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\ext-it\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
