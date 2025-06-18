@@ -40,3 +40,5 @@ D:\download\fcm\experiment-01\fcm-push-api\obj\Debug\net10.0\refint\FcmPushApi.d
 D:\download\fcm\experiment-01\fcm-push-api\obj\Debug\net10.0\FcmPushApi.pdb
 D:\download\fcm\experiment-01\fcm-push-api\obj\Debug\net10.0\FcmPushApi.genruntimeconfig.cache
 D:\download\fcm\experiment-01\fcm-push-api\obj\Debug\net10.0\ref\FcmPushApi.dll
+D:\download\fcm\experiment-01\fcm-push-api\bin\Debug\net10.0\FcmPushApi.xml
+D:\download\fcm\experiment-01\fcm-push-api\obj\Debug\net10.0\FcmPushApi.xml
