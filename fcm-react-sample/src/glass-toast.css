@@ -1,0 +1,23 @@
+/* Glassmorphism (liquid glass) style for react-toastify toasts */
+.glass-toast {
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #222 !important;
+}
+
+.glass-toast .Toastify__close-button {
+  color: #333 !important;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.glass-toast .Toastify__close-button:hover {
+  opacity: 1;
+}
+
+.glass-toast .Toastify__progress-bar {
+  background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%) !important;
+}
