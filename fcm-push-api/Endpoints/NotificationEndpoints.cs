@@ -185,5 +185,47 @@ public static class NotificationEndpoints
             };
             return operation;
         });
+
+        // Subscribe to topic endpoint
+        app.MapPost("/api/notification/subscribe-topic", async (FcmService fcmService, TopicSubscriptionRequest request) =>
+        {
+            if (request.Tokens == null || !request.Tokens.Any() || string.IsNullOrEmpty(request.Topic))
+            {
+                return Results.BadRequest(new { Error = "Tokens and Topic are required" });
+            }
+            try
+            {
+                var response = await fcmService.SubscribeToTopicAsync(request.Tokens, request.Topic);
+                return Results.Ok(new { response.SuccessCount, response.FailureCount, response.Errors });
+            }
+            catch (Exception ex)
+            {
+                return Results.Json(new { Error = ex.Message }, statusCode: 500);
+            }
+        });
+
+        // Unsubscribe from topic endpoint
+        app.MapPost("/api/notification/unsubscribe-topic", async (FcmService fcmService, TopicSubscriptionRequest request) =>
+        {
+            if (request.Tokens == null || !request.Tokens.Any() || string.IsNullOrEmpty(request.Topic))
+            {
+                return Results.BadRequest(new { Error = "Tokens and Topic are required" });
+            }
+            try
+            {
+                var response = await fcmService.UnsubscribeFromTopicAsync(request.Tokens, request.Topic);
+                return Results.Ok(new { response.SuccessCount, response.FailureCount, response.Errors });
+            }
+            catch (Exception ex)
+            {
+                return Results.Json(new { Error = ex.Message }, statusCode: 500);
+            }
+        });
     }
+}
+
+public class TopicSubscriptionRequest
+{
+    public List<string> Tokens { get; set; } = new();
+    public string Topic { get; set; } = string.Empty;
 }

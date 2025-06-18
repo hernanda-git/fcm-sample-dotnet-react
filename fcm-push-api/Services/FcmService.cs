@@ -98,4 +98,30 @@ public class FcmService
             throw new Exception($"Failed to send topic notification: {ex.Message}", ex);
         }
     }
+
+    public async Task<TopicManagementResponse> SubscribeToTopicAsync(List<string> tokens, string topic)
+    {
+        try
+        {
+            var response = await _messaging.SubscribeToTopicAsync(tokens, topic);
+            return response;
+        }
+        catch (FirebaseMessagingException ex)
+        {
+            throw new Exception($"Failed to subscribe to topic: {ex.Message}", ex);
+        }
+    }
+
+    public async Task<TopicManagementResponse> UnsubscribeFromTopicAsync(List<string> tokens, string topic)
+    {
+        try
+        {
+            var response = await _messaging.UnsubscribeFromTopicAsync(tokens, topic);
+            return response;
+        }
+        catch (FirebaseMessagingException ex)
+        {
+            throw new Exception($"Failed to unsubscribe from topic: {ex.Message}", ex);
+        }
+    }
 }

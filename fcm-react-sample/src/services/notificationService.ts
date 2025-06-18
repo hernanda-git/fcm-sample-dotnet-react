@@ -48,3 +48,33 @@ export const onForegroundMessage = (
   });
   return unsubscribe;
 };
+
+const API_BASE = import.meta.env.VITE_API_BASE;
+
+export const subscribeToTopic = async (token: string, topic: string): Promise<boolean> => {
+  try {
+    const response = await fetch(`${API_BASE}/subscribe-topic`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tokens: [token], topic }),
+    });
+    return response.ok;
+  } catch (error) {
+    console.error('Error subscribing to topic:', error);
+    return false;
+  }
+};
+
+export const unsubscribeFromTopic = async (token: string, topic: string): Promise<boolean> => {
+  try {
+    const response = await fetch(`${API_BASE}/unsubscribe-topic`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tokens: [token], topic }),
+    });
+    return response.ok;
+  } catch (error) {
+    console.error('Error unsubscribing from topic:', error);
+    return false;
+  }
+};

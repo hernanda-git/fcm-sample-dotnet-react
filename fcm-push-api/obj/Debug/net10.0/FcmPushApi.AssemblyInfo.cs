@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FcmPushApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a53bb9386c023233c067e1e9de39f8cd786606c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a978beb26e9317c5d1608fb4a95a57f1e9b04f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("FcmPushApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FcmPushApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
